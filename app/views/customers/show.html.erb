@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @customer.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @customer.last_name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @customer.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @customer.email %>
+</p>
+
+<div id="orders">
+  <% if @customer.orders.present? %>
+   <%# <%= render file: "orders/index", local: { orders: @customer.orders}%> 
+  <h1>Orders</h1>
+    <strong>Product Name  </strong>
+    <strong>Product Count </strong>
+    <strong>Customer ID </strong>
+    <strong>Customer Name </strong>
+    <strong>Option </strong>
+    <% end %>
+  <%= render @customer.orders 
+
+</div>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

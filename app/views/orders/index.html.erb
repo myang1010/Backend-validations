@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Product Count</th>
+      <th>Customer ID</th>
+      <th>Customer Name</th>
+      <th>Options</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead> 
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <%= render 'order', order: order %> 
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_order_path %>
