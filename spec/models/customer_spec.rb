@@ -7,7 +7,10 @@ RSpec.describe Customer, type: :model do
   end
   it "is not valid without a first_name" do
     subject.first_name=nil
+    # subject2 = subject.first_name=""
+
     expect(subject).to_not be_valid
+    # expect(subject2).to_not be_valid
   end
   it "is not valid without a last_name" do
     subject.last_name=nil
